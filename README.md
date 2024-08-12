@@ -1,2 +1,0 @@
-# vinculacion
-proyecto de vinculacion

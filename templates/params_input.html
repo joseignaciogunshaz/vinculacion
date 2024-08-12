@@ -1,0 +1,33 @@
+{% extends "base_template.html" %}
+{% block title %}Entrada de Parámetros{% endblock %}
+{% block content %}
+    <form action="" method="post">
+        <label for="name">High: </label>
+        <input type="text" id="high" name="high" /><br>
+        <label for="name">Low: </label>
+        <input type="text" id="low" name="low" /><br>
+        <label for="name">Gdp: </label>
+        <input type="text" id="gdp" name="gdp" /><br>
+        <label for="name">Family: </label>
+        <input type="text" id="family" name="family" /><br>
+        <label for="name">Lifexp: </label>
+        <input type="text" id="lifexp" name="lifexp" /><br>
+        <label for="name">Freedom: </label>
+        <input type="text" id="freedom" name="freedom" /><br>
+        <label for="name">Generosity: </label>
+        <input type="text" id="generosity" name="generosity" /><br>
+        <label for="name">Corruption: </label>
+        <input type="text" id="corruption" name="corruption" /><br>
+        <label for="name">Dystopia: </label>
+        <input type="text" id="dystopia" name="dystopia" /><br>
+
+        <label for="colours">Colores : </label>
+        <select name= colours method="GET" action="/" onfocus="this.selectedIndex = -1;">
+            {% for colour in colours %}
+            <option value= "{{colour}}" SELECTED>{{colour}}</option>"
+            {% endfor %}
+        </select>
+
+        <input type="submit" id="send-signup" name="signup" value="Predecir" />
+    </form>
+{% endblock %}

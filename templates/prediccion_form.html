@@ -1,0 +1,54 @@
+{% extends "base_template.html" %}
+{% block title %}Entrada de Parámetros{% endblock %}
+{% block content %}
+    <form action="" method="post">
+        <label for="name">Edad: </label>
+        <input type="text" id="edad" name="edad" /><br>
+        <label for="discapacidades">Tipo Discapacidad : </label>
+        <select name= discapacidades method="GET" action="/" onfocus="this.selectedIndex = -1;">
+            {% for discapacidad in discapacidades %}
+            <option value= "{{discapacidad}}" SELECTED>{{discapacidad}}</option>"
+            {% endfor %}
+        </select><br>
+        <label for="name">Porcentaje %(0-1): </label>
+        <input type="text" id="porcentaje" name="porcentaje" /><br>
+        <label for="carne">Carne : </label>
+        <select name= carne method="GET" action="/" onfocus="this.selectedIndex = -1;">
+            {% for value in values  %}
+            <option value= "{{value}}" SELECTED>{{value}}</option>"
+            {% endfor %}
+        </select><br>
+        <label for="regularizado">Regularizado : </label>
+        <select name= regularizado method="GET" action="/" onfocus="this.selectedIndex = -1;">
+            {% for value in values  %}
+            <option value= "{{value}}" SELECTED>{{value}}</option>"
+            {% endfor %}
+        </select><br>
+        <label for="resago">Resago : </label>
+        <select name= resago method="GET" action="/" onfocus="this.selectedIndex = -1;">
+            {% for value in values  %}
+            <option value= "{{value}}" SELECTED>{{value}}</option>"
+            {% endfor %}
+        </select><br>
+        <label for="asistencia">Asistencia : </label>
+        <select name= asistencia method="GET" action="/" onfocus="this.selectedIndex = -1;">
+            {% for value in values  %}
+            <option value= "{{value}}" SELECTED>{{value}}</option>"
+            {% endfor %}
+        </select><br>
+        <label for="grados">Grado/Curso : </label>
+        <select name= grados method="GET" action="/" onfocus="this.selectedIndex = -1;">
+            {% for grado in grados  %}
+            <option value= "{{grado}}" SELECTED>{{grado}}</option>"
+            {% endfor %}
+        </select><br>
+        <label for="instituciones">Institución : </label>
+        <select name= instituciones method="GET" action="/" onfocus="this.selectedIndex = -1;">
+            {% for institucion in instituciones  %}
+            <option value= "{{institucion}}" SELECTED>{{institucion}}</option>"
+            {% endfor %}
+        </select><br>
+        
+        <input type="submit" id="send-signup" name="signup" value="Predecir" />
+    </form>
+{% endblock %}
