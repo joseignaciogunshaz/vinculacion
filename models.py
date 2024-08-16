@@ -1,4 +1,3 @@
-#machine learning
 import pandas as pd
 import numpy as np
 import datetime
@@ -30,11 +29,11 @@ class Models:
         }
     #función de ejecución
     def grid_training(self, X, y):
-        print("** 3 Empieza entrenamiento")
+        print("Iniciamos el entrenamiento del modelo")
         print(datetime.datetime.now())
         best_score = 999
         best_model = None
-        print(" *** Entrenando")
+        print("Entrenando modelo")
         for name, reg in self.reg.items():
             print(" ...... ")
             grid_reg = GridSearchCV(reg, self.params[name], cv=3).fit(X, y.values.ravel())
@@ -46,5 +45,5 @@ class Models:
         
         print(datetime.datetime.now())
         utils = Utils()
-        print("** 4. Exportando modelo")
+        print("Se inicia la exportación del modelo")
         utils.model_export(best_model, best_score)

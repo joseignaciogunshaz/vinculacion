@@ -11,13 +11,14 @@ if __name__ == "__main__":
     models = Models()
     prepropresamiento = Preprocesamiento()
 
-    print("** 1. Empieza carga de data set")
+    print("La carga de información ha comenzado")
 
     data = utils.load_from_csv('./in/EstudiantesDiscapacidades.csv')
     data = prepropresamiento.preparar_dataset(data)
+    ##Establecemos las variables que se describen como caracteristicas de los estudiantes para el entrenamiento del modelo  
     drop_columns=['cedula','apellidos_nombres','fecha_nacimiento','nivel_educativo']
     X, y = utils.features_target(data, drop_columns, ['nivel_educativo'])
-
+    ##Definimos el proceso de entrenamiento
     models.grid_training(X,y)
 
     print(data)
