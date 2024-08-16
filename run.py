@@ -15,7 +15,7 @@ posts = []
 
 @app.route('/')
 def index():
-    return "Hello, World!"
+    return "Conexión establecida correctamente!"
 
 #POSTMAN PARA PRUEBAS
 @app.route("/formulario_estudiantes/", methods=["GET", "POST"])
