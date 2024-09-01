@@ -8,9 +8,9 @@ from sklearn import preprocessing
 from sklearn.preprocessing import LabelEncoder
 
 class Preprocesamiento:
-
+#preparamos todo el dataset 
     def preparar_dataset(self, df):
-        print("**   1.1 Preparando modelo")
+        print("Preparando modelo")
         df = pd.DataFrame(df)
         df['porcentaje'] = df['porcentaje'].replace({'%':''}, regex=True)
         df['tipo_discapacidad'] = df['tipo_discapacidad'].str.strip()
