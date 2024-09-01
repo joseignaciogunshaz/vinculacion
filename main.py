@@ -15,8 +15,9 @@ if __name__ == "__main__":
 
     data = utils.load_from_csv('./in/EstudiantesDiscapacidades.csv')
     data = prepropresamiento.preparar_dataset(data)
+
     ##Establecemos las variables que se describen como caracteristicas de los estudiantes para el entrenamiento del modelo  
-    drop_columns=['cedula','apellidos_nombres','fecha_nacimiento','nivel_educativo','tipo_discapacidad']
+    drop_columns=['cedula','edad','apellidos_nombres','fecha_nacimiento','nivel_educativo','asistencia','tipo_discapacidad']
     X, y = utils.features_target(data, drop_columns, ['tipo_discapacidad'])
     ##Definimos el proceso de entrenamiento
     models.grid_training(X,y)
